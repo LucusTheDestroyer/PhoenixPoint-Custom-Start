@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="CustomStartingSquadConfig.cs" />
     <Compile Include="CustomStartingSquadMain.cs" />
+    <Compile Include="GeoPhoenixFaction_Patches.cs" />
+    <Compile Include="UpdateStartingTemplates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

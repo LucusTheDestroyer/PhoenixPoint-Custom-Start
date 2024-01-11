@@ -50,6 +50,7 @@ namespace CustomStartingSquad
 
 			/// Apply any general game modifications.
 			Main = this;
+			StartingTemplates.Update();
 			harmony.PatchAll();
 		}
 
@@ -67,6 +68,7 @@ namespace CustomStartingSquad
 		/// </summary>
 		public override void OnConfigChanged() {
 			/// Config is accessible at any time.
+			StartingTemplates.Update();
 		}
 
 
