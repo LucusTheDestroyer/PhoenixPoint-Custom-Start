@@ -17,7 +17,7 @@
   "Description": [
     {
       "Key": "English",
-      "Value": "TBC"
+      "Value": "Allows customisation of the new game starting squad when playing without the tutorial\n\nBy default the squad will include the three tutorial characters shown in the title screen: Sophia (Assault), Jacob (Sniper) and Omar (Heavy) and there are options to add additional tutorial characters, generic classes or a Scarab. Not compatible with Terror From The Void."
     }
   ],
   "Dependencies": []
