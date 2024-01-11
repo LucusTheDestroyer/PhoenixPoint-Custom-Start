@@ -1,0 +1,24 @@
+{
+  "ID": "Lucus.CustomStart",
+  "AssemblyName": "CustomStartingSquad.dll",
+  "Author": [
+    {
+      "Key": "English",
+      "Value": "Lucus"
+    }
+  ],
+  "Version": "1.0",
+  "Name": [
+    {
+      "Key": "English",
+      "Value": "Custom Starting Squad"
+    }
+  ],
+  "Description": [
+    {
+      "Key": "English",
+      "Value": "TBC"
+    }
+  ],
+  "Dependencies": []
+}
