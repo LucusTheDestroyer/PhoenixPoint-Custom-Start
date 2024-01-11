@@ -12,17 +12,26 @@ namespace CustomStartingSquad
 	{
 		/// Only public fields are serialized.
 		/// Supported types for in-game UI are:
-		// public int IntegerValue;
-		// public float FloatValue;
 
-		public bool FullManticore;
-
+		[ConfigField(text: "Start with a Scarab", description: "Your starting squad will include a Scarab. Overrides other squad settings.")]
 		public bool StartWithScarab;
 
-		public StartingModifier StartingStats;
+		[ConfigField(text: "Start with Takeshi", description: "Start with the additional Assault that features in the Tutorial Base Mission.")]
+		public bool StartWithTakeshi;
+
+		[ConfigField(text: "Start with Irina", description: "Start with the additional Sniper that features in the Tutorial Base Mission.")]
+		public bool StartWithIrina;
+
+		[ConfigField(text: "Starting Base Stats", description: "Tutorial templates have additional base stats. You can choose to keep them or scale the units by difficulty. Non-tutorial templates will scale by difficulty.")]
+		public StartingModifier StartingStats = StartingModifier.DifficultyScaled;
 		
-		public AdditionalTemplates FirstNewSoldier = AdditionalTemplates.Takeshi;
+		[ConfigField(text: "First Additional Soldier", description: "Allows you to fill the remaining seat(s) of the Manticore with a class of your choosing. Once full, the game will ignore further templates. Select 'None' to leave any of the remaining seats empty.")]
+		public AdditionalTemplates FirstAdditionalSoldier = AdditionalTemplates.Assault;
+		
+		[ConfigField(text: "Second Additional Soldier", description: "Allows you to fill the remaining seat(s) of the Manticore with a class of your choosing. Once full, the game will ignore further templates. Select 'None' to leave any of the remaining seats empty.")]
 		public AdditionalTemplates SecondAdditionalSoldier = AdditionalTemplates.None;
+		
+		[ConfigField(text: "Third Additional Soldier", description: "Allows you to fill the remaining seat(s) of the Manticore with a class of your choosing. Once full, the game will ignore further templates. Select 'None' to leave any of the remaining seats empty.")]
 		public AdditionalTemplates ThirdAdditionalSoldier = AdditionalTemplates.None;
 
 		public enum StartingModifier
@@ -32,7 +41,7 @@ namespace CustomStartingSquad
 
 		public enum AdditionalTemplates
 		{
-			None, Takeshi, Irina, Assault, Heavy, Sniper, 
+			None, Assault, Heavy, Sniper, 
 		}
 	}
 }
