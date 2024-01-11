@@ -1,17 +1,11 @@
-using Base.Core;
-using Base.Defs;
-using Base.Levels;
 using HarmonyLib;
 using PhoenixPoint.Common.Core;
 using PhoenixPoint.Common.Entities.Items;
-using PhoenixPoint.Common.Game;
 using PhoenixPoint.Geoscape.Entities;
 using PhoenixPoint.Geoscape.Levels.Factions;
-using PhoenixPoint.Modding;
 using PhoenixPoint.Tactical.Entities;
 using System;
 using System.Linq;
-using UnityEngine;
 
 namespace CustomStartingSquad
 {

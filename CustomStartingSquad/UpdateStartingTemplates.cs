@@ -1,16 +1,9 @@
-using Base.Core;
 using Base.Defs;
-using Base.Levels;
 using HarmonyLib;
 using PhoenixPoint.Common.Core;
-using PhoenixPoint.Common.Entities.GameTagsTypes;
-using PhoenixPoint.Common.Game;
-using PhoenixPoint.Modding;
 using PhoenixPoint.Tactical.Entities;
-using PhoenixPoint.Tactical.Entities.Abilities;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace CustomStartingSquad
 {
@@ -84,19 +77,12 @@ namespace CustomStartingSquad
             {
                 TacCharacterDef Jacob = (TacCharacterDef)Repo.GetDef("2f7a41a8-d68a-3374-1a13-16f18425d7bb"); //"PX_Jacob_Tutorial2_TacCharacterDef"
 
-                ClassTagDef AssaultClassTag = (ClassTagDef)Repo.GetDef("6fef6614-8515-1234-0975-8fcb10fa4443"); //"Assault_ClassTagDef"
-                ClassTagDef SniperClassTag = (ClassTagDef)Repo.GetDef("5ea5ff74-8494-4554-6a31-73bc06dc8fab"); //"Sniper_ClassTagDef"
-                ClassProficiencyAbilityDef SniperProficiency = (ClassProficiencyAbilityDef)Repo.GetDef("54328f21-e01a-4364-0aa7-4507affd2ccf"); //"Sniper_ClassProficiency_AbilityDef"
-
                 JacobV2 = Repo.CreateDef<TacCharacterDef>("d1aac8e5-f136-4968-8b58-b489758a5a03", Jacob);
                 JacobV2.Data.GameTags[0] = StaticTemplates[Characters.Irina].Data.GameTags[0];
-                // JacobV2.Data.GameTags = JacobV2.Data.GameTags.Where(tag => tag != AssaultClassTag).ToArray();
-                // JacobV2.Data.GameTags = JacobV2.Data.GameTags.AddToArray(SniperClassTag);
 
                 JacobV2.Data.BodypartItems = StaticTemplates[Characters.Irina].Data.BodypartItems;
                 JacobV2.Data.EquipmentItems = StaticTemplates[Characters.Irina].Data.EquipmentItems;
                 JacobV2.Data.Abilites[0] = StaticTemplates[Characters.Irina].Data.Abilites[0];
-                // JacobV2.Data.Abilites = new TacticalAbilityDef[] { SniperProficiency };
             }
             return JacobV2;
         }

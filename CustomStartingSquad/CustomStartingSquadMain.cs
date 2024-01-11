@@ -1,10 +1,8 @@
 using Base.Core;
 using Base.Defs;
 using Base.Levels;
-using PhoenixPoint.Common.Core;
 using PhoenixPoint.Common.Game;
 using PhoenixPoint.Modding;
-using PhoenixPoint.Tactical.Entities;
 using System.Linq;
 using UnityEngine;
 
@@ -35,8 +33,6 @@ namespace CustomStartingSquad
 
 			/// All mod dependencies are accessible and always loaded.
 			int c = Dependencies.Count();
-			/// Mods have their own logger. Message through this logger will appear in game console and Unity log file.
-			Logger.LogInfo($"Say anything crab people-related.");
 			/// Metadata is whatever is written in meta.json
 			string v = MetaData.Version.ToString();
 			/// Game creates Harmony object for each mod. Accessible if needed.
@@ -52,6 +48,9 @@ namespace CustomStartingSquad
 			Main = this;
 			StartingTemplates.Update();
 			harmony.PatchAll();
+
+			/// Mods have their own logger. Message through this logger will appear in game console and Unity log file.
+			Logger.LogInfo($"Custom Starting Squad mod enabled.");
 		}
 
 		/// <summary>
