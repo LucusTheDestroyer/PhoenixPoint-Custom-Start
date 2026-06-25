@@ -41,7 +41,7 @@ namespace CustomStartingSquad
 
 		public enum AdditionalTemplates
 		{
-			None, Assault, Heavy, Sniper, 
+			None, Assault, Heavy, Sniper, Infiltrator, Technician, Berserker, JudgementPriest, ScreamingPriest, SynodPriest
 		}
 	}
 }
