@@ -28,6 +28,12 @@ namespace CustomStartingSquad
             {CustomStartingSquadConfig.AdditionalTemplates.Assault, (TacCharacterDef)Repo.GetDef("c777d353-484f-dc24-d98f-e5c35887e200")}, //"PX_AssaultStarting_TacCharacterDef"
             {CustomStartingSquadConfig.AdditionalTemplates.Sniper, (TacCharacterDef)Repo.GetDef("dd03b24f-bc6d-7564-3bd9-94cf52b2665a")}, //"PX_SniperStarting_TacCharacterDef"
             {CustomStartingSquadConfig.AdditionalTemplates.Heavy, (TacCharacterDef)Repo.GetDef("da34dfc5-c90f-c684-7aaa-823ccfec549a")}, //"PX_HeavyStarting_TacCharacterDef"
+            {CustomStartingSquadConfig.AdditionalTemplates.Infiltrator, (TacCharacterDef)Repo.GetDef("124eddd1-a83a-c234-0970-28051e452e6e")},//"SY_Infiltrator1_CharacterTemplateDef"
+            {CustomStartingSquadConfig.AdditionalTemplates.Technician, (TacCharacterDef)Repo.GetDef("fec66d80-8d6a-0654-8b29-4839e1f470bd")},//"NJ_Technician1_CharacterTemplateDef"
+            {CustomStartingSquadConfig.AdditionalTemplates.Berserker, (TacCharacterDef)Repo.GetDef("c9f65c9b-0dad-9cc4-4b06-c67cf27e642e")},//"AN_Berserker1_CharacterTemplateDef"
+            {CustomStartingSquadConfig.AdditionalTemplates.JudgementPriest, (TacCharacterDef)Repo.GetDef("b51ea472-1d46-b6a4-0a1d-eded8d3e645e")}, //"AN_JudgementPriest1_CharacterTemplateDef"
+            {CustomStartingSquadConfig.AdditionalTemplates.ScreamingPriest, (TacCharacterDef)Repo.GetDef("943a789d-c253-d384-8bda-7cda8c0266c7")}, //"AN_ScreamingPriest1_CharacterTemplateDef"
+            {CustomStartingSquadConfig.AdditionalTemplates.SynodPriest, (TacCharacterDef)Repo.GetDef("e4b03cd7-516d-e534-8bcb-2fdcf46b2e4b")}, //"AN_SynodPriest1_CharacterTemplateDef"
         };
 
         internal static List<CustomStartingSquadConfig.AdditionalTemplates> SoldierList;
