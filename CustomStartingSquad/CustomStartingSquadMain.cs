@@ -1,9 +1,13 @@
 using Base.Core;
 using Base.Defs;
 using Base.Levels;
+using HarmonyLib;
 using PhoenixPoint.Common.Game;
+using PhoenixPoint.Geoscape.Levels.Factions;
 using PhoenixPoint.Modding;
+using PhoenixPoint.Tactical.Entities;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 
 namespace CustomStartingSquad
@@ -47,7 +51,6 @@ namespace CustomStartingSquad
 			/// Apply any general game modifications.
 			Main = this;
 			StartingTemplates.Update();
-			harmony.PatchAll();
 
 			/// Mods have their own logger. Message through this logger will appear in game console and Unity log file.
 			Logger.LogInfo($"Custom Starting Squad mod enabled.");
@@ -98,6 +101,25 @@ namespace CustomStartingSquad
 		/// </summary>
 		/// <param name="level">Level that ends.</param>
 		public override void OnLevelEnd(Level level) {
+			if (level.name.Contains("Home")) 
+			{
+				// Unpatch any existing patches on the method to allow it to be used with Custom Campaign:
+				var originalMethod = typeof(GeoPhoenixFaction).GetMethod("CreateInitialSquad", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+				var patchInfo = Harmony.GetPatchInfo(originalMethod);
+				if(patchInfo != null)
+				{
+					foreach(Patch patch in patchInfo.Prefixes)
+					{
+						((Harmony)HarmonyInstance).Unpatch(originalMethod, HarmonyPatchType.Prefix, patch.owner);
+					}
+					foreach(Patch patch in patchInfo.Postfixes)
+					{
+						((Harmony)HarmonyInstance).Unpatch(originalMethod, HarmonyPatchType.Postfix, patch.owner);
+					}
+				}
+				((Harmony)HarmonyInstance).PatchAll();
+				Logger.LogInfo($"Custom Starting Squad Harmony Patch enabled");
+			}
 		}
 	}
 }
