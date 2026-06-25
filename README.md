@@ -1,4 +1,4 @@
-# CUSTOM STARTING SQUAD ([STEAM WORKSHOP](https://steamcommunity.com/sharedfiles/filedetails/?id=3137579662))
+# Custom Starting Squad ([Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3137579662))
 
 This mod allows you to customise your starting squad when starting a new game without the tutorial.
 
