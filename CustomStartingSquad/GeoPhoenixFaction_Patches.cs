@@ -1,5 +1,6 @@
 using HarmonyLib;
 using PhoenixPoint.Common.Core;
+using PhoenixPoint.Common.Entities.GameTagsTypes;
 using PhoenixPoint.Common.Entities.Items;
 using PhoenixPoint.Geoscape.Entities;
 using PhoenixPoint.Geoscape.Levels.Factions;
@@ -16,13 +17,14 @@ namespace CustomStartingSquad
         public static bool Prefix(GeoPhoenixFaction __instance, GeoSite site)
         {
             GeoVehicle geoVehicle = __instance.Vehicles.First<GeoVehicle>();
+            ClassTagDef VehicleTag = (ClassTagDef)CustomStartingSquadMain.Repo.GetDef("9d7f6f6c-5f81-22d4-aa05-90baa1a28edf"); //"Vehicle_ClassTagDef"
             GameDifficultyLevelDef currentDifficulty = __instance.GeoLevel.CurrentDifficultyLevel;
             foreach(TacCharacterDef template in currentDifficulty.StartingSquadTemplate)
             {
                 GeoCharacter character;
                 if(StartingTemplates.StaticTemplates.Values.Contains(template))
                 {
-                    if(Config.StartingStats == CustomStartingSquadConfig.StartingModifier.DifficultyScaled && template.Volume == 1)
+                    if(Config.StartingStats == CustomStartingSquadConfig.StartingModifier.DifficultyScaled && !template.ClassTags.Contains(VehicleTag))
                     {
                         character = __instance.GeoLevel.CreateCharacterFromTemplate(template, __instance, null, currentDifficulty.StartingSquadGenerationParams);
                     }
