@@ -1,6 +1,6 @@
 # Custom Starting Squad ([Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3137579662))
 
-VERSION 2.0 OUT NOW! CUSTOM CAMPAIGN COMPATIBILITY, ALL CLASSES AVAILABLE
+VERSION 2.0 OUT NOW! CUSTOM CAMPAIGN COMPATIBILITY, ALL CLASSES AVAILABLE TO PICK FROM
 
 This mod allows you to customise your starting squad when starting a new game without the tutorial.
 
